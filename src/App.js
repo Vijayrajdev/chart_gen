@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import Linechart from "./pages/Linechart";
+import Barchart from "./pages/Barchart";
+import Areachart from "./pages/Areachart";
+import { Routes, Route } from "react-router-dom";
+import React from "react";
+export const ChartContext = React.createContext();
 
 function App() {
+  const ChartState = React.useState({
+    userName: "User, Reload the page",
+    Chart: "/",
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChartContext.Provider value={ChartState}>
+      <div className="min-h-screen bgColor">
+        <Header />
+        <div>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/line" element={<Linechart />} />
+            <Route path="/bar" element={<Barchart />} />
+            <Route path="/area" element={<Areachart />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </ChartContext.Provider>
   );
 }
 
