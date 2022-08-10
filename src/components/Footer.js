@@ -35,8 +35,8 @@ const Footer = () => {
         <hr className="my-6 border-white sm:mx-auto lg:my-8" />
         <span className="block text-sm text-white sm:text-center">
           © 2022{" "}
-          <a href="https://flowbite.com/" className="hover:underline">
-            Flowbite™
+          <a href="/" className="hover:underline">
+            Chartgen™
           </a>
           . All Rights Reserved.
         </span>
