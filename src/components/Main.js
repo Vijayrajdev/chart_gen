@@ -29,7 +29,7 @@ const Main = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between md:items-center p-4 md:p-6 gap-6 md:gap-8 md:mt-12 mt-8">
+    <div className="flex flex-col justify-center md:items-center p-4 md:p-6 gap-6 md:gap-8 md:mt-12 mt-8">
       {/* Modal */}
       <div>
         {showModal ? (
